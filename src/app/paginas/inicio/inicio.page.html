@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">Examen Validacion de 2 campos de Contraseña</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="ion-text-center">
+    <ion-input type="password" label="Digitar Contraseña" [(ngModel)]="txtPassword">
+      <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+    </ion-input>
+    <ion-input type="password" label="Confirmar Contraseña" [(ngModel)]="txtPasswordConfirm">
+      <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+    </ion-input>
+    <div *ngIf="mensaje" style="margin-top: 10px; color: {{tipoMensaje === 'error' ? 'red' : 'green'}};">
+      <ion-label>
+        {{mensaje}}
+      </ion-label>
+    </div>
+
+  </div>
+  <div class="ion-text-center">
+    <ion-button color="success" (click)="validar()">Validar</ion-button>
+    <ion-button color="danger" (click)="limpiar()">Borrar</ion-button>
+  </div>
+</ion-content>
+<ion-footer>
+  <ion-label>Creado por Adrian Cedeño R.</ion-label>
+</ion-footer>
